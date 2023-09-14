@@ -24,17 +24,12 @@ at http://www.microsoft.com/info/cpyright.htm.
 
 #Use this script to query partner information for all the subscriptions under your Azure tenant.
 
-
-
 Connect-AzAccount
-
 $subs = Get-AzSubscription
-
 $output = @()
 
 ### For this script to work you must get a token from the Azure portal by going to Subscription->Partner Informatin page while you have browser's developer tools open. Copy the bearer token and insert into below line start from "ey...". Getting a token using Get-AzAccessToken will not work.
 $token = "Bearer eyXXXXXX"
-
 
 foreach ($sub in $subs)
 {
@@ -56,7 +51,6 @@ foreach ($sub in $subs)
     $output += $item
 
 }
-
 $output | Export-Csv -Path C:\Temp\partnerinfo.csv -NoTypeInformation
 
 
