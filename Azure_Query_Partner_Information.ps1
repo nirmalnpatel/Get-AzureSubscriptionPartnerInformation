@@ -32,8 +32,8 @@ $subs = Get-AzSubscription
 
 $output = @()
 
-### Get accesss token from portal
-$token = "Bearer eyJ0eXAiOiJ"
+### For this script to work you must get a token from the Azure portal by going to Subscription->Partner Informatin page while you have browser's developer tools open. Copy the bearer token and insert into below line start from "ey...". Getting a token using Get-AzAccessToken will not work.
+$token = "Bearer eyXXXXXX"
 
 
 foreach ($sub in $subs)
